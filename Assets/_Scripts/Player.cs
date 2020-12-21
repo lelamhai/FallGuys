@@ -9,26 +9,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float m_JumpHeight = 7f;
     [SerializeField] private Rigidbody m_Rigidbody;
     private bool m_IsJump = true;
-    private void Start()
-    {
-        m_Rigidbody = GetComponent<Rigidbody>();
-    }
+    
 
     private void Update()
     {
         if(m_MoveJoyStick.Direction != Vector3.zero)
         {
             transform.position += m_MoveJoyStick.Direction * m_Speed;
-        }
-
-        RaycastHit hit;
-        // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, -transform.up, out hit))
-        {
-            if(hit.transform.tag == "Plane")
-            {
-                
-            }    
         }
 
         if(Input.GetKeyDown(KeyCode.Space))
