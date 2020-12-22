@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "Plane")
+        if (collision.transform.CompareTag("Plane"))
         {
             m_IsJump = true;
         }

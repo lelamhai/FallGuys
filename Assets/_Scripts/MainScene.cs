@@ -28,5 +28,11 @@ public class MainScene : MonoBehaviour
             m_BeiginWidth = pointStart;
             m_BeiginHeight += m_Offset;
         }
+
+        for (int i = 0; i < 2; i++)
+        {
+            var contentPlane = Instantiate(m_ContentPlane);
+            contentPlane.transform.position = new Vector3(0, (-i -1) * 5, 0);
+        }
     }
 }
