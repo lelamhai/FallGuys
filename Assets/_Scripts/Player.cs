@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
         if(m_MoveJoyStick.Direction != Vector3.zero)
         {
             transform.position += m_MoveJoyStick.Direction * m_Speed;
+            transform.LookAt(-(transform.position + m_MoveJoyStick.Direction) *100);
         }
 
         if(Input.GetKeyDown(KeyCode.Space))
